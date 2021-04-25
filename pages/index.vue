@@ -14,4 +14,11 @@ export default Vue.extend({
 })
 </script>
 
-<style></style>
+<style scoped>
+.ticket-taker {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  margin: 8px;
+}
+</style>

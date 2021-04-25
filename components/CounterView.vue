@@ -1,26 +1,26 @@
 <template>
   <div class="counter-view">
-    <div>
-      <div>counter</div>
-      <div>processing</div>
-      <div>processed</div>
-    </div>
-    <div v-for="(counter, index) in counters" :key="index">
-      <div>{{ counter.name }}</div>
-      <div>{{ counter.processingVisitor || 'idle' }}</div>
-      <div>{{ counter.processedVisitors.join(',') }}</div>
-    </div>
+    <CounterCard
+      v-for="(counter, index) in counters"
+      :key="index"
+      :data="counter"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { COUNTERS, VISITORS } from '~/constants/store'
+import CounterCard from '~/components/CounterCard.vue'
+const COUNTER_NAMES = process.env.COUNTER_NAMES
 
 export default Vue.extend({
+  components: {
+    CounterCard,
+  },
   data() {
     return {
-      names: ['Amy', 'Bob', 'Cory', 'Dora'],
+      names: COUNTER_NAMES,
     }
   },
   computed: {
@@ -62,9 +62,4 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
-.counter-view > div {
-  display: grid;
-  grid-template-columns: 100px 100px auto;
-}
-</style>
+<style scoped lang="scss"></style>

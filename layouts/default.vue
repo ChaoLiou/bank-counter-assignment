@@ -4,4 +4,9 @@
   </div>
 </template>
 
-<style></style>
+<style>
+body {
+  margin: 0px;
+  font-family: 'Courier New', Courier, monospace;
+}
+</style>

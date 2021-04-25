@@ -1,20 +1,32 @@
 # bank-counter-assignment
 
-## Build Setup
+- 首先, 因為專案是以 [NuxtJS](https://nuxtjs.org/docs/2.x/get-started/installation) 建置, 環境需要依照其要求:
+
+> node - at least v10.13 We recommend you have the latest LTS version installed.
+
+- 接著, 若是第一次執行, 請先下載相依套件
 
 ```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+npm install
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+- 在啟動前, 若要更改 bank counter 之數量與名稱, 請至 `/nuxt.config.env.js`
+
+```javascript
+import config from './nuxt.config'
+
+export default {
+  env: {
+    ...
+    COUNTER_NAMES: ['Amy', 'Bob', 'Cory', 'Dora'],
+    ...
+  },
+}
+
+```
+
+- 最後, 啟動 nuxt dev server
+
+```bash
+npm run dev
+```
